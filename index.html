@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nails Master</title>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="master-photo">
+                <img src="MASTER_PHOTO_URL" alt="Мастер" id="master-photo">
+            </div>
+            <div class="header-info">
+                <h1 id="salon-name">Nails by Master</h1>
+                <p>Мастер маникюра на дому</p>
+            </div>
+        </header>
+
+        <div class="search-container">
+            <input type="text" id="search-input" placeholder="Поиск услуг...">
+        </div>
+
+        <section class="section">
+            <h2>Категории услуг</h2>
+            <div class="categories-grid" id="categories-container"></div>
+        </section>
+
+        <div class="cart-panel" id="cart-panel">
+            <div class="cart-info">
+                <span id="cart-count">0 услуг</span>
+                <span id="cart-total">0 ₽</span>
+            </div>
+            <button class="cart-btn" id="checkout-btn">Записаться</button>
+        </div>
+    </div>
+
+    <div class="category-screen" id="category-screen">
+        <div class="category-header">
+            <button class="back-btn" id="back-to-categories">← Назад</button>
+            <h2 id="category-title">Категория</h2>
+        </div>
+        <div class="services-container" id="category-services"></div>
+    </div>
+
+    <div class="modal" id="service-modal">
+        <div class="modal-content">
+            <span class="close" id="close-modal">&times;</span>
+            
+            <div class="modal-service-image">
+                <img id="modal-service-image" src="" alt="">
+            </div>
+            
+            <h2 id="modal-service-name">Название услуги</h2>
+            <p id="modal-service-description">Описание услуги</p>
+            <div class="service-duration" id="modal-service-duration">⏱ Время выполнения: 90 минут</div>
+            <div class="price" id="modal-service-price">0 ₽</div>
+            
+            <div class="reviews-section">
+                <h3>📝 Отзывы клиентов</h3>
+                <div class="reviews-container" id="reviews-container"></div>
+                
+                <div class="add-review-form">
+                    <h4>Оставить отзыв</h4>
+                    <div class="rating-input">
+                        <label>Ваша оценка:</label>
+                        <div class="stars-selector">
+                            <span class="star" data-rating="1">☆</span>
+                            <span class="star" data-rating="2">☆</span>
+                            <span class="star" data-rating="3">☆</span>
+                            <span class="star" data-rating="4">☆</span>
+                            <span class="star" data-rating="5">☆</span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="review-text" placeholder="Поделитесь вашими впечатлениями..."></textarea>
+                    </div>
+                    <button class="submit-review" id="submit-review-btn">Отправить отзыв</button>
+                </div>
+            </div>
+            
+            <div class="modal-actions">
+                <button class="add-to-cart" id="add-to-cart-btn">Добавить в корзину</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="booking-modal">
+        <div class="modal-content booking-content">
+            <span class="close" id="close-booking-modal">&times;</span>
+            <h2>Запись на услугу</h2>
+            
+            <div class="form-group">
+                <label for="client-name">Ваше имя:</label>
+                <input type="text" id="client-name" placeholder="Введите ваше имя">
+            </div>
+            
+            <div class="form-group">
+                <label for="client-phone">Телефон:</label>
+                <input type="tel" id="client-phone" placeholder="+7 (XXX) XXX-XX-XX">
+            </div>
+            
+            <div class="form-group">
+                <label for="booking-date">Дата:</label>
+                <input type="date" id="booking-date">
+            </div>
+            
+            <div class="form-group">
+                <label for="booking-time">Время:</label>
+                <select id="booking-time">
+                    <option value="">Выберите время</option>
+                </select>
+            </div>
+            
+            <div class="selected-services" id="selected-services-list"></div>
+            
+            <div class="booking-total">
+                Итого: <span id="booking-total-price">0</span> ₽
+            </div>
+            
+            <button class="confirm-booking" id="confirm-booking-btn">Подтвердить запись</button>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

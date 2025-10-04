@@ -1,0 +1,11 @@
+{
+  "url": "https://your-username.github.io/nails-app/",
+  "name": "Nails Master",
+  "description": "Запись на маникюр",
+  "short_name": "NailsApp",
+  "theme_color": "#4CAF50",
+  "background_color": "#F0F7F0",
+  "display": "standalone",
+  "scope": "/",
+  "start_url": "/index.html"
+}
