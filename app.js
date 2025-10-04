@@ -5,7 +5,7 @@ let tg = window.Telegram.WebApp;
 const APP_DATA = {
     master: {
         name: "Алёна",
-        photo: "https://drive.google.com/file/d/1rr0ElZ3joDvVCnUV-flhLm8j8tQ3kOI4/view?usp=sharing",
+        photo: "https://ibb.co/Q7HbmB33",
         description: "Персональный мастер маникюра"
     },
     
@@ -849,5 +849,6 @@ document.addEventListener('DOMContentLoaded', function() {
 window.addEventListener('error', function(event) {
     console.error("🚨 Глобальная ошибка:", event.error);
 });
+
 
 console.log("🔧 app.js загружен и готов к работе");
